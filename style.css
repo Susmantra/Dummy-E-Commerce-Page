@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  gap: 5px;
+
+  grid-template-areas:
+    " h1 h1 h1"
+    "header header header"
+    "bb1 bb1 sb1"
+    "bb1 bb1 sb2"
+    "sm main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer";
+}
+.wrapper > * {
+  display: grid;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  background: blue;
+  grid-area: h1;
+}
+.header {
+  background: green;
+  grid-area: header;
+}
+.banner {
+  background: radial-gradient(yellow, blue);
+  min-height: 30vh;
+  grid-area: bb1;
+}
+.side-box1 {
+  background: lavender;
+  grid-area: sb1;
+}
+.side-box2 {
+  background: gold;
+  grid-area: sb2;
+}
+.side-menu {
+  background: orange;
+  grid-area: sm;
+}
+.tags {
+  background: cyan;
+  grid-area: tags;
+}
+.recent {
+  background: maroon;
+  grid-area: recent;
+}
+.main {
+  background: linear-gradient(to right, blue, white);
+  grid-area: main;
+  min-height: 200px;
+}
+.footer {
+  background: #000;
+  color: white;
+  grid-area: footer;
+}
+
+/* max width 1000px */
+@media (max-width: 1000px) {
+  .wrapper {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      " h1 h1"
+      "header header "
+      "bb1 bb1"
+      "sb1 sb2"
+      "sm sm"
+      "main main"
+      "tags recent"
+      "footer footer";
+  }
+}
+
+/* max width 768px */
+
+@media (max-width: 768px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    grid-template-areas:
+      "h1"
+      "header "
+      "bb1"
+      "sb1"
+      "sb2"
+      "sm"
+      "main"
+      "tags"
+      "recent"
+      "footer";
+  }
+}
